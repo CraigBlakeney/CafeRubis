@@ -6,6 +6,9 @@ void setup()
   
 }
 
+ArrayList<Product> products = new ArrayList<Product>();
+ArrayList<Product> bill = new ArrayList<Product>();
+
 void draw()
 {
   
