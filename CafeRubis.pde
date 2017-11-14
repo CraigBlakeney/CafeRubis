@@ -3,8 +3,9 @@
 void setup()
 {
   size(800,600);
-  
+  background(125,125,125);
   loadData();
+  printProducts();
 }
 
 ArrayList<Product> products = new ArrayList<Product>();
@@ -12,8 +13,9 @@ ArrayList<Product> bill = new ArrayList<Product>();
 
 void draw()
 {
-  
+  displayProducts();
 }
+
 
 void loadData()
 {
@@ -25,13 +27,33 @@ void loadData()
    products.add(product);
  }
  
- //Iterate over the product ArrayList
- //Prints the price after the corresponding product
- for(Product p:products)
- {
-   println(p.name);
-   println(p.price);
- }
-  
+}
 
+
+void printProducts()
+{
+  for(Product p:products)
+  {
+    println(p.toString());
+  }
+}
+
+
+void displayProducts()
+{
+  float border = height/products.size();
+  stroke(255);
+  textAlign(LEFT,LEFT);
+  for(int i=0;i<products.size();i++)
+  {
+    float position =map(i,0,products.size(),border,width-border);
+    Product p =products.get(i);
+    println(p.name + p.price);
+  }
+    
+}
+
+void displayBill()
+{
+  
 }

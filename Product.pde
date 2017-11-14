@@ -15,4 +15,11 @@ class Product
   price = row.getFloat("Price");
  }
  
+ String toString()
+ {
+  return name + "  " 
+    + price;
+ }
+ 
+ 
 }
